@@ -396,8 +396,17 @@ namespace WindowsFormsApp2
 
             // Sort the processes based on their burst times in ascending order
             Array.Sort(processes, (a, b) => a.burst.CompareTo(b.burst));
+            int n = processes.Length;
+            for (int i = 0; i < n; i++)
+            {
+             
+                textBox6.Text = processes[i].process.ToString();
 
-            int n = processes.Length;  // Number of processes
+
+
+            }
+
+         
             int[] completionTime = new int[n];
             int[] waitingTime = new int[n];
             int[] turnaroundTime = new int[n];
@@ -408,6 +417,9 @@ namespace WindowsFormsApp2
             for (int i = 0; i < n; i++)
             {
                 dataGridView1.Rows.Add(processes[i].process, processes[i].arrival, processes[i].burst);
+               
+
+
             }
 
             // Calculate completion time, waiting time, and turnaround time for each process
@@ -488,6 +500,26 @@ namespace WindowsFormsApp2
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BURST_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
