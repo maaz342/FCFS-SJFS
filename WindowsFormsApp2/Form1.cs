@@ -229,6 +229,12 @@ namespace WindowsFormsApp2
                 dataGridView1.Rows[i].Cells["Completion"].Value = completionTime[i];
                 dataGridView1.Rows[i].Cells["Waiting"].Value = waitingTime[i];
                 dataGridView1.Rows[i].Cells["Turnaround"].Value = turnaroundTime[i];
+                double averageTurnaroundTime = (double)totalTurnaroundTime / n;
+                double averageWaitingTime = (double)totalWaitingTime / n;
+
+                // Display the average turnaround time and waiting time
+                textBox5.Text = averageWaitingTime.ToString();
+                textBox4.Text = averageTurnaroundTime.ToString();
             }
         }
         private void PerformSJFS()
@@ -385,7 +391,7 @@ namespace WindowsFormsApp2
 
             // Combine the burst, arrival, and process arrays into a single array of tuples
             (int process, int arrival, int burst)[] processes = valuearray
-                .Select((value, index) => (process: index + 1, arrival: value , burst: valuearraya[index]))
+                .Select((value, index) => (process: index + 1, arrival: value, burst: valuearraya[index]))
                 .ToArray();
 
             // Sort the processes based on their burst times in ascending order
@@ -431,7 +437,16 @@ namespace WindowsFormsApp2
                 dataGridView1.Rows[i].Cells["Waiting"].Value = waitingTime[i];
                 dataGridView1.Rows[i].Cells["Turnaround"].Value = turnaroundTime[i];
             }
+
+            // Calculate average turnaround time and waiting time
+            double averageTurnaroundTime = (double)totalTurnaroundTime / n;
+            double averageWaitingTime = (double)totalWaitingTime / n;
+
+            // Display the average turnaround time and waiting time
+            textBox5.Text = averageWaitingTime.ToString();
+            textBox4.Text = averageTurnaroundTime.ToString();
         }
+
 
 
 
@@ -465,6 +480,16 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             PerformSJFS();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
