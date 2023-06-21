@@ -167,8 +167,7 @@ namespace WindowsFormsApp2
                     }
 
                     // Access the first element of the array
-                    int firstElement = valuearraya[0];
-                    MessageBox.Show("First element: " + firstElement);
+                  
                 }
                 catch (Exception eab)
                 {
@@ -274,11 +273,8 @@ namespace WindowsFormsApp2
                         }
                     }
 
-                    // Access the first element of the array
-                    string firstElement = lines[0];
-                    MessageBox.Show("First element: " + firstElement);
+                  
 
-                    MessageBox.Show("File created successfully!");
                 }
                 catch (Exception ex)
                 {
@@ -323,11 +319,9 @@ namespace WindowsFormsApp2
                             writer.WriteLine(line);
                         }
                     }
-
-                    // Access the first element of the array
-                    int firstElement = valuearray[0];
-                    MessageBox.Show("First element: " + firstElement);
                 }
+
+
                 catch (Exception ea)
                 {
                     MessageBox.Show(ea.Message);
@@ -372,9 +366,6 @@ namespace WindowsFormsApp2
                         }
                     }
 
-                    // Access the first element of the array
-                    int firstElement = valuearraya[0];
-                    MessageBox.Show("First element: " + firstElement);
                 }
                 catch (Exception eab)
                 {
@@ -397,14 +388,7 @@ namespace WindowsFormsApp2
             // Sort the processes based on their burst times in ascending order
             Array.Sort(processes, (a, b) => a.burst.CompareTo(b.burst));
             int n = processes.Length;
-            for (int i = 0; i < n; i++)
-            {
-             
-                textBox6.Text = processes[i].process.ToString();
-
-
-
-            }
+          
 
          
             int[] completionTime = new int[n];
